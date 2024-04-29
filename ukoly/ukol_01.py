@@ -121,9 +121,57 @@ class Reditel(Zamestnanec):
 # print(reditel.ziskej_inicialy())
 
 # zvire = Zvire('Lev', 'Lvice', 150)
-# reditel = Reditel('Jan Novotny', 80000, zvire)
+# reditel = Reditel('Jan Novotny', 800000, zvire)
 # assert isinstance(reditel.oblibene_zvire, Zvire)
 
 # print(reditel.pozice)
 # print(reditel.cele_jmeno)
 # print(reditel.ziskej_inicialy())
+
+
+### trida Zoo
+
+class Zoo():
+    def __init__(self, nazev, adresa, reditel, zamestnanci, zvirata):
+        self.nazev = nazev
+        self.adresa = adresa
+        self.reditel = reditel
+        self.zamestnanci = zamestnanci
+        self.zvirata = zvirata
+
+    def vaha_vsech_zvirat_v_zoo(self):
+        vaha_zvirat = 0
+        for zvire in self.zvirata:
+            vaha_zvirat += zvire.vaha
+        return vaha_zvirat
+
+    def mesicni_naklady_na_zamestnance(self):
+        naklady_na_zamestnance = 0
+        for zamestnanec in self.zamestnanci:
+            naklady_na_zamestnance += zamestnanec.rocni_plat
+        naklady_na_zamestnance += reditel.rocni_plat
+        return naklady_na_zamestnance / 12
+
+# zoo = Zoo('ZOO Praha', 'U Trojského zámku 3/120', reditel, list_zamestnancu, list_zvirat)
+
+# print(zoo.reditel)
+# print('Celková váha zvířat v ZOO:', zoo.vaha_vsech_zvirat_v_zoo())
+# print('Měsíční náklady na zaměstnance:', zoo.mesicni_naklady_na_zamestnance())
+
+# print(150+20+300+700)
+# print(700000+600000+650000+800000)
+
+# Zoo class
+# zoo = Zoo('Zoo Praha', 'Praha', reditel, [zamestnanec], [zvire])
+# assert hasattr(zoo, 'nazev')
+# assert hasattr(zoo, 'adresa')
+# assert hasattr(zoo, 'reditel')
+# assert hasattr(zoo, 'zamestnanci')
+# assert hasattr(zoo, 'zvirata')
+# assert isinstance(zoo.nazev, str)
+# assert isinstance(zoo.adresa, str)
+# assert isinstance(zoo.reditel, Reditel)
+# assert isinstance(zoo.zamestnanci, list)
+# assert isinstance(zoo.zvirata, list)
+# assert zoo.vaha_vsech_zvirat_v_zoo() == 150
+# assert zoo.mesicni_naklady_na_zamestnance() == (zamestnanec.rocni_plat + reditel.rocni_plat) / 12
