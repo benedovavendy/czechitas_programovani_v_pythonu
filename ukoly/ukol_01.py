@@ -101,3 +101,29 @@ for zamestnanec in zamestnanci_dict:
 # assert isinstance(zamestnanec.rocni_plat, int)
 # assert isinstance(zamestnanec.pozice, str)
 # assert zamestnanec.ziskej_inicialy() == 'P.N.'
+
+
+### trida Reditel
+
+class Reditel(Zamestnanec):
+    def __init__(self, cele_jmeno, rocni_plat, oblibene_zvire, pozice = 'Reditel'):
+        super().__init__(cele_jmeno, rocni_plat, pozice)
+        self.oblibene_zvire = oblibene_zvire
+    
+# Priklad vytvoreni objektu (klidne zkopiruj)
+# zvire = Zvire('Adolf', 'Tarantule Velká', 0.1)
+# reditel = Reditel(cele_jmeno='Karel', rocni_plat=800_000, oblibene_zvire=zvire)
+# assert reditel.pozice == 'Reditel'
+# assert isinstance(reditel.oblibene_zvire, Zvire)
+
+# print(reditel.pozice)
+# print(reditel.cele_jmeno)
+# print(reditel.ziskej_inicialy())
+
+# zvire = Zvire('Lev', 'Lvice', 150)
+# reditel = Reditel('Jan Novotny', 80000, zvire)
+# assert isinstance(reditel.oblibene_zvire, Zvire)
+
+# print(reditel.pozice)
+# print(reditel.cele_jmeno)
+# print(reditel.ziskej_inicialy())
